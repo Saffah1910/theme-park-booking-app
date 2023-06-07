@@ -1,4 +1,4 @@
-function parkTransactions(type){
+function parkTransactions(){
 
    var  rides = {
     one : 100,
@@ -6,42 +6,52 @@ function parkTransactions(type){
     three : 300
    }
 
-    var  snacks = {
-    one : 10,
-    two : 20,
-    three : 30
-   }
+//     var  snacks = {
+//     one : 10,
+//     two : 20,
+//     three : 30
+//    }
 
-    function goOnRide(){
-        if(type == 1){
-            rides.one --
+    function goOnRide(type){
+        if(type == "one"){
+            if(rides.one >= 8){
+                rides.one -=8
+            }
         }
-        if(type == 2){
-            rides.two --
+        else if(type == "two"){
+            if(rides.two >= 8){
+                rides.two -=8
+            }
         }
-        if(type == 3){
-            rides.three --
+        else if(type == "three"){
+            if(rides.three >= 8){
+                rides.three -=8
+            }
         }
 
     }
-    function buyMeal(){
-        if(type == 1){
-            snacks.one --
-        }
-        if(type == 2){
-            snacks.two --
-        }
-        if(type == 3){
-            snacks.three --
-        }
+    function getRides(){
+        return rides.one
     }
+    // function buyMeal(){
+    //     if(type == 1){
+    //         snacks.one --
+    //     }
+    //     if(type == 2){
+    //         snacks.two --
+    //     }
+    //     if(type == 3){
+    //         snacks.three --
+    //     }
+    // }
     function checkPackage(){
         type
     }
 
     return {
         goOnRide,
-        buyMeal,
-        checkPackage
+        //buyMeal,
+        checkPackage,
+        getRides
     }
 }

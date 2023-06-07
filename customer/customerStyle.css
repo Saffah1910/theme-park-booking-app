@@ -2,23 +2,27 @@
     font-family: cartoon;
     src: url(/ComicalCartoon-Ajy2.ttf);
 }
-
-/* .packages{
-    display: flex;
-    width: 800px;
-
-   }
-   input{
+body{
+    background-image: url(../2ndbackground.jpg);
+    background-size: 100vw 100vh;
+    position: relative;
+    background-repeat:repeat-y;
+}
+h2{
+    font-family: cartoon;
     text-align: center;
-    
-   }
-   img{
-    width: 100%;
-    
-   } */
+}
+h3{
+
+    font-family: cartoon;
+    text-align: center;
+}
+
 .packages {
     display: flex;
     flex-direction: row;
+    text-align: center;
+
 }
 
 .card {
@@ -96,4 +100,14 @@
 } */
 input{
     display: block;
+}
+.payment{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
