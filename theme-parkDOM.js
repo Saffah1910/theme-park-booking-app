@@ -1,6 +1,9 @@
 let readerElem= document.querySelector(".reader");
+const displayElement = document.querySelector(".display")
+const buttonsElement = document.querySelector(".buttons")
 
     var parktransactions = parkTransactions()
+var QRid;
 
 function onScanSuccess(decodedText, decodedResult) {
     // handle the scanned code as you like, for example:
@@ -8,15 +11,29 @@ function onScanSuccess(decodedText, decodedResult) {
 
     var radioBtn = document.querySelector("input[name='packRadio']:checked");
   
-    if(decodedText == "one"){
-      parktransactions.goOnRide(decodedText)
-    } else if (decodeText)
-
-
-    console.log(parktransactions.getRides())
+  if(decodedText == "one"){
+     displayElement.innerHTML = "Your QR code is vailid, you're on package one"
+      buttonsElement.style.display = "flex";
+      balanceElem.innerHTML = parktransactions.getPackageOne();
+      QRid = decodedText;
+    } 
+  else if (decodedText == "two"){
+    displayElement.innerHTML = "Your QR code is vailid, you're on package two"
+    buttonsElement.style.display = "flex";
+    balanceElem.innerHTML = parktransactions.getPackageTwo();
+    QRid = decodedText;
+  }
+  else if(decodedText == "three"){
+    displayElement.innerHTML = "Your QR code is vailid, you're on package three"
+    buttonsElement.style.display = "flex";
+    balanceElem.innerHTML = parktransactions.getPackageThree();
+    QRid = decodedText;
+  }
+   // console.log(parktransactions.getPoints())
     // if(decodedText == "one"){
     //   alert("working")
     // }
+
   }
 
 function onScanFailure(error) {
@@ -35,3 +52,33 @@ function onScanFailure(error) {
   
   
   var radioBtn = document.querySelector("input[name='packRadio']:checked");
+    const buyRideElem = document.querySelector(".buyRide")
+    const buyMealELem = document.querySelector(".buyMeal")
+    const balanceElem = document.querySelector(".balance")
+
+  function goOnRideDOM(){
+    parktransactions.goOnRide(QRid)
+    
+    if(QRid == "one") {
+      balanceElem.innerHTML = parktransactions.getPackageOne()
+    } else if (QRid == "two") {
+      balanceElem.innerHTML = parktransactions.getPackageTwo()
+    } else if (QRid == "three") {
+      balanceElem.innerHTML = parktransactions.getPackageThree()
+    }
+    //console.log( parktransactions.getRides())
+
+
+  }buyRideElem.addEventListener("click", goOnRideDOM)
+
+  function buyMealDOM(){
+    parktransactions.buyMeal(QRid)
+    if(QRid == "one") {
+      balanceElem.innerHTML = parktransactions.getPackageOne()
+    } else if (QRid == "two") {
+      balanceElem.innerHTML = parktransactions.getPackageTwo()
+    } else if (QRid == "three") {
+      balanceElem.innerHTML = parktransactions.getPackageThree()
+    }
+    //console.log(parktransactions.getMeal())
+  }buyMealELem.addEventListener("click", buyMealDOM)

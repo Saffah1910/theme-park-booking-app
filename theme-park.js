@@ -1,57 +1,73 @@
 function parkTransactions(){
 
-   var  rides = {
+   var  points = {
     one : 100,
     two : 200,
     three : 300
    }
 
-//     var  snacks = {
-//     one : 10,
-//     two : 20,
-//     three : 30
-//    }
-
     function goOnRide(type){
         if(type == "one"){
-            if(rides.one >= 8){
-                rides.one -=8
+            if(points.one >= 8){
+                points.one -=8
             }
         }
         else if(type == "two"){
-            if(rides.two >= 8){
-                rides.two -=8
+            if(points.two >= 8){
+                points.two -=8
             }
         }
         else if(type == "three"){
-            if(rides.three >= 8){
-                rides.three -=8
+            if(points.three >= 8){
+                points.three -=8
             }
         }
 
     }
-    function getRides(){
-        return rides.one
+    function getPackageOne(){
+        return points.one
     }
-    // function buyMeal(){
-    //     if(type == 1){
-    //         snacks.one --
-    //     }
-    //     if(type == 2){
-    //         snacks.two --
-    //     }
-    //     if(type == 3){
-    //         snacks.three --
-    //     }
+
+    function getPackageTwo(){
+        return points.two
+    }
+
+    function getPackageThree(){
+        return points.three
+    }
+
+    function buyMeal(type){
+        if(type == "one"){
+            if(points.one >= 4){
+                points.one -=4
+            }
+        }
+        if(type == "two"){
+            if(points.two >= 4){
+                points.two -=4
+            }
+        }
+        if(type == "three"){
+            if(points.three >= 4){
+                points.three -=4
+            }
+        }
+    }
+    // function getMeal(){
+    //     return points.one
     // }
-    function checkPackage(){
-        type
-    }
+
+    // function checkPackage(){
+    //     type
+    // }
 
     return {
         goOnRide,
-        //buyMeal,
-        checkPackage,
-        getRides
+        buyMeal,
+        //checkPackage,
+        getPackageOne,
+        getPackageTwo,
+        getPackageThree
+       // getMeal
     }
 }
