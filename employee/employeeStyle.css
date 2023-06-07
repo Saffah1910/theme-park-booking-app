@@ -103,3 +103,7 @@ button {
    button:active:after {
     box-shadow: 0 0px 0 0 rgb(0 0 0 / 15%);
    }
+   .buttons{
+    background-color: #90a955;
+    font-family: cartoon;
+   }
