@@ -10,7 +10,9 @@ function onScanSuccess(decodedText, decodedResult) {
   
     if(decodedText == "one"){
       parktransactions.goOnRide(decodedText)
-    }
+    } else if (decodeText)
+
+
     console.log(parktransactions.getRides())
     // if(decodedText == "one"){
     //   alert("working")

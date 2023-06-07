@@ -33,24 +33,30 @@ function parkTransactions(){
     function getRides(){
         return rides.one
     }
-    // function buyMeal(){
-    //     if(type == 1){
-    //         snacks.one --
-    //     }
-    //     if(type == 2){
-    //         snacks.two --
-    //     }
-    //     if(type == 3){
-    //         snacks.three --
-    //     }
-    // }
+    function buyMeal(){
+        if(type == "one"){
+            if(snacks.one >= 4){
+                snacks.one -=4
+            }
+        }
+        if(type == "two"){
+            if(snacks.two >= 4){
+                snacks.two -=4
+            }
+        }
+        if(type == "three"){
+            if(snacks.three >= 4){
+                snacks.three -=4
+            }
+        }
+    }
     function checkPackage(){
         type
     }
 
     return {
         goOnRide,
-        //buyMeal,
+        buyMeal,
         checkPackage,
         getRides
     }
