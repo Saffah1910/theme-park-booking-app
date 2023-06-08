@@ -108,7 +108,7 @@ button {
     font-family: cartoon;
    }
    .display {
-
+    display: none;
     border: 1px solid;
     margin: 0 auto;
     padding: 15px 10px 15px 50px;
