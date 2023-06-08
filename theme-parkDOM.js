@@ -55,6 +55,7 @@ function onScanFailure(error) {
     const buyRideElem = document.querySelector(".buyRide")
     const buyMealELem = document.querySelector(".buyMeal")
     const balanceElem = document.querySelector(".balance")
+    const confirmElem = document.querySelector(".confirm")
 
   function goOnRideDOM(){
     parktransactions.goOnRide(QRid)
@@ -82,3 +83,7 @@ function onScanFailure(error) {
     }
     //console.log(parktransactions.getMeal())
   }buyMealELem.addEventListener("click", buyMealDOM)
+
+  function showQRcode(){
+    alert("Here is a qr code")
+  }confirmElem.addEventListener("click", showQRcode)
