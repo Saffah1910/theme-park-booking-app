@@ -12,19 +12,28 @@ function onScanSuccess(decodedText, decodedResult) {
     var radioBtn = document.querySelector("input[name='packRadio']:checked");
   
   if(decodedText == "one"){
-     displayElement.innerHTML = "Your QR code is vailid, you're on package one"
+      displayElement.innerHTML = "Your QR code is vailid, you're on package one"
+      setTimeout(function () {
+      displayElement.innerHTML = ""
+      }, 6000)
       buttonsElement.style.display = "flex";
       balanceElem.innerHTML = parktransactions.getPackageOne();
       QRid = decodedText;
     } 
   else if (decodedText == "two"){
     displayElement.innerHTML = "Your QR code is vailid, you're on package two"
+    setTimeout(function () {
+    displayElement.innerHTML = ""
+    }, 6000)
     buttonsElement.style.display = "flex";
     balanceElem.innerHTML = parktransactions.getPackageTwo();
     QRid = decodedText;
   }
   else if(decodedText == "three"){
     displayElement.innerHTML = "Your QR code is vailid, you're on package three"
+    setTimeout(function () {
+    displayElement.innerHTML = ""
+    }, 6000)
     buttonsElement.style.display = "flex";
     balanceElem.innerHTML = parktransactions.getPackageThree();
     QRid = decodedText;
