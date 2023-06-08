@@ -4,7 +4,7 @@
 }
 
 body {
-    background-image:linear-gradient(rgba(145, 141, 141, 0.5), rgba(0,0,0,0.5)), url(../2ndbackground.jpg);
+    background-image: url(../2ndbackground.jpg);
     background-size: 100vw 100vh;
     position: relative;
     background-repeat: repeat-y;

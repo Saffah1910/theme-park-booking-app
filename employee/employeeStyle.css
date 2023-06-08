@@ -3,7 +3,7 @@
     src: url(../ComicalCartoon-Ajy2.ttf);
 }
 body{
-    background-image: linear-gradient(rgba(145, 141, 141, 0.5), rgba(0,0,0,0.5)),url(./amusement-park-carnival-festive-fair-cartoon_107791-1896.avif);
+    background-image:url(./amusement-park-carnival-festive-fair-cartoon_107791-1896.avif);
     background-size: cover;
     background-size: 100vw 100vh;
     position: relative;

@@ -3,7 +3,7 @@
     src: url(./ComicalCartoon-Ajy2.ttf);
 }
 body{
-    background-image: linear-gradient(rgba(145, 141, 141, 0.5), rgba(0,0,0,0.5)), url(./themePark.jpg);
+    background-image:  url(./themePark.jpg);
  
     background-size: 100vw 100vh;
     position: relative;
