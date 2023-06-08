@@ -107,3 +107,17 @@ button {
     background-color: #90a955;
     font-family: cartoon;
    }
+   .display {
+
+    border: 1px solid;
+    margin: 0 auto;
+    padding: 15px 10px 15px 50px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    color: black;
+    background-color: #DFF2BF;
+    /* background-image: url('../employee/resetGreen.png'); */
+    width: fit-content;
+
+
+}
