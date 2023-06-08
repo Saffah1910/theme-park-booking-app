@@ -1,9 +1,23 @@
 let readerElem= document.querySelector(".reader");
 const displayElement = document.querySelector(".display")
 const buttonsElement = document.querySelector(".buttons")
+const confirmBtn = document.querySelector(".confirmBtn")
+const qrImage = document.querySelector(".qrImage")
+const contain = document.querySelector(".contain")
+let val = 0;
+
 
     var parktransactions = parkTransactions()
 var QRid;
+contain.innerHTML = val;
+confirmBtn.addEventListener("click", function() {
+ val = 1;
+
+//     let p = document.createElement("p");
+//     contain.append(p)
+//   qrImage.setAttribute("src", "./one.png")
+})
+
 
 function onScanSuccess(decodedText, decodedResult) {
     // handle the scanned code as you like, for example:
@@ -40,11 +54,11 @@ function onScanFailure(error) {
     // handle scan failure, usually better to ignore and keep scanning.
     // for example:
     // console.warn(`Code scan error = ${error}`);
-  }
-  let html5QrcodeScanner = new Html5QrcodeScanner(
-    "reader",
-    { fps: 10, qrbox: {width: 250, height: 250} },
-    /* verbose= */ false);
+}
+let html5QrcodeScanner = new Html5QrcodeScanner(
+  "reader",
+  { fps: 10, qrbox: {width: 250, height: 250} },
+  /* verbose= */ false);
   html5QrcodeScanner.render(onScanSuccess, onScanFailure);
 
   const nameElement = document.querySelector(".firstname")
@@ -82,8 +96,6 @@ function onScanFailure(error) {
       balanceElem.innerHTML = parktransactions.getPackageThree()
     }
     //console.log(parktransactions.getMeal())
-  }buyMealELem.addEventListener("click", buyMealDOM)
-
-  function showQRcode(){
-    alert("Here is a qr code")
-  }confirmElem.addEventListener("click", showQRcode)
+  }
+  
+  buyMealELem.addEventListener("click", buyMealDOM)

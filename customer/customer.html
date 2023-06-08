@@ -16,30 +16,42 @@
             <div class="image1"><span class="text">package 1</span></div>
             <span class="title">100 points </span>
             <span class="price">R100</span>
-            <input type="radio" value="packageOne" name="packRadio">
+
         </div>
         <div class="card">
             <div class="image2"><span class="text">package 2</span></div>
 
             <span class="title">200 points</span>
             <span class="price">R200</span>
-            <input type="radio" value="packageTwo" name="packRadio">
+
         </div>
 
         <div class="card">
             <div class="image3"><span class="text">package 3</span></div>
             <span class="title">300 points</span>
             <span class="price">R300</span>
-            <input type="radio" value="packageThree" name="packRadio">
+
         </div>
+    </div>
+    <div class="radioBtn">
+        <label>
+            <input type="radio" value="packageOne" name="packRadio">
+        </label>
+        <label>
+            <input type="radio" value="packageTwo" name="packRadio">
+        </label>
+        <label>
+            <input type="radio" value="packageThree" name="packRadio">
+        </label>
+
     </div>
     <h3>Enter personal details</h3>
 
 
 
     <div class="payment">
-        <div class="col-50">
-            <!-- <h3>Billing Address</h3> -->
+        <div class="">
+      
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
             <input type="text" id="fname" name="firstname" placeholder="John M. Doe" class="firstname">
 
@@ -55,44 +67,17 @@
             </div>
         </div>
 
-        <div class="col-50">
-            <!-- <h3>Payment</h3>
-            <label for="fname">Accepted Cards</label>
-            <div class="icon-container">
-                <i class="fa fa-cc-visa" style="color:navy;"></i>
-                <i class="fa fa-cc-amex" style="color:blue;"></i>
-                <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                <i class="fa fa-cc-discover" style="color:orange;"></i>
-            </div>
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-            <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-            <label for="expmonth">Exp Month</label>
-            <input type="text" id="expmonth" name="expmonth" placeholder="September">
-
-            <div class="row">
-                <div class="col-50">
-                    <label for="expyear">Exp Year</label>
-                    <input type="text" id="expyear" name="expyear" placeholder="2018">
-                </div>
-                <div class="col-50">
-                    <label for="cvv">CVV</label>
-                    <input type="text" id="cvv" name="cvv" placeholder="352">
-                </div>
-            </div>
-        </div>
-
-    </div> -->
-    <div class="btn">
-        <button class="confirm">
-
-            <a href="../customer/qrcode.html">CONFIRM</a>
-        </button>
     </div>
 
-    <script src="../theme-park.js"></script>
-    <script src="../theme-parkDOM.js"></script>
+            <div>
+                <button class="confirmBtn">
+
+                    <a href="../customer/qrcode.html">CONFIRM</a>
+                </button>
+            </div>
+
+            <script src="../theme-park.js"></script>
+            <script src="../theme-parkDOM.js"></script>
 </body>
 
 </html>
