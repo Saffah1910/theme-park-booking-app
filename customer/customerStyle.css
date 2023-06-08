@@ -182,9 +182,8 @@ a {
     font-size: 20px;
     display: flex;
 }
-/* 
-@media (min-width: 768px) {
-    .sections {
-        display: flex;
-    }
-} */
+
+.confirmContainer {
+    display: flex;
+    justify-content: center;
+}

@@ -3,20 +3,30 @@ const displayElement = document.querySelector(".display")
 const buttonsElement = document.querySelector(".buttons")
 const confirmBtn = document.querySelector(".confirmBtn")
 const qrImage = document.querySelector(".qrImage")
-const contain = document.querySelector(".contain")
-let val = 0;
 
-
-    var parktransactions = parkTransactions()
+var parktransactions = parkTransactions()
 var QRid;
-contain.innerHTML = val;
-confirmBtn.addEventListener("click", function() {
- val = 1;
 
-//     let p = document.createElement("p");
-//     contain.append(p)
-//   qrImage.setAttribute("src", "./one.png")
-})
+  if(document.URL.includes("qrcode.html")) {
+    if (localStorage.getItem("package") == "packageOne") {
+      qrImage.setAttribute("src", "../one.png")
+    } else if (localStorage.getItem("package") == "packageTwo") {
+      qrImage.setAttribute("src", "../two.png")
+    } else if (localStorage.getItem("package") == "packageThree") {
+      qrImage.setAttribute("src", "../three.png")
+    }
+  }
+
+  confirmBtn.addEventListener("click", function() {
+    const checkedBtn = document.querySelector("input[name='packRadio']:checked")
+    
+    localStorage.setItem("package", checkedBtn.value)
+    
+    window.open("../customer/qrcode.html", "_self")
+
+  })
+
+
 
 
 function onScanSuccess(decodedText, decodedResult) {
@@ -43,17 +53,13 @@ function onScanSuccess(decodedText, decodedResult) {
     balanceElem.innerHTML = parktransactions.getPackageThree();
     QRid = decodedText;
   }
-   // console.log(parktransactions.getPoints())
-    // if(decodedText == "one"){
-    //   alert("working")
-    // }
+ 
 
   }
 
 function onScanFailure(error) {
     // handle scan failure, usually better to ignore and keep scanning.
     // for example:
-    // console.warn(`Code scan error = ${error}`);
 }
 let html5QrcodeScanner = new Html5QrcodeScanner(
   "reader",
@@ -81,8 +87,6 @@ let html5QrcodeScanner = new Html5QrcodeScanner(
     } else if (QRid == "three") {
       balanceElem.innerHTML = parktransactions.getPackageThree()
     }
-    //console.log( parktransactions.getRides())
-
 
   }buyRideElem.addEventListener("click", goOnRideDOM)
 
@@ -95,7 +99,6 @@ let html5QrcodeScanner = new Html5QrcodeScanner(
     } else if (QRid == "three") {
       balanceElem.innerHTML = parktransactions.getPackageThree()
     }
-    //console.log(parktransactions.getMeal())
   }
   
   buyMealELem.addEventListener("click", buyMealDOM)
