@@ -24,6 +24,7 @@ a{
 }
 
 button {
+    margin:2% ;
     width: 9em;
     height: 3em;
     border-radius: 30em;
